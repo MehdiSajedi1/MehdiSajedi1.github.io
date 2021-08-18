@@ -4,6 +4,50 @@
   background-color: $clr-dark-grey;
   position: relative;
 
+  .logo-link {
+    width: clamp(200px, 14vw, 350px);
+    position: absolute;
+    top: 20px;
+    left: -10px;
+
+    @include media('<=phone') {
+      width: 150px;
+    }
+
+    .logo-image {
+      width: 100%;
+    }
+  }
+
+  .resume {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    border-radius: 2px;
+    color: $clr-light-blue;
+    border: 1px solid $clr-light-blue;
+    transition: $transition;
+
+    font-size: clamp(1.5rem, 1vw, 2.2rem);
+    padding: clamp(8px, 0.667vw, 14px) clamp(24px, 2vw, 42px);
+
+    @include media('<=phone') {
+      font-size: 1.3rem;
+    }
+
+    i {
+      transform: translateX(clamp(4px, 0.5vw, 10px));
+    }
+
+    &:hover {
+      background-color: $clr-light-blue;
+      color: $clr-dark-grey;
+    }
+  }
+
   .side-menu {
     display: flex;
     flex-direction: column;
@@ -29,27 +73,48 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 12px;
-      text-transform: uppercase;
-      font-size: 14px;
       font-weight: 600;
       letter-spacing: 1px;
-      transform: translateX(-80px);
       transition: transform 0.25s cubic-bezier(0.37, 0.6, 0.43, 1.09);
+      //
+      padding: 15px;
+      transform: translateX(-92px);
+      border-radius: 2px;
 
       @include media('<=tablet') {
         transform: initial;
-        padding: 15px;
+        padding: 12px;
         border-radius: 3px;
+      }
+
+      @include media('>=1800px') {
+        padding: 18px;
+        transform: translateX(-105px);
+      }
+      @include media('>=2400px') {
+        transform: translateX(-122px);
       }
 
       p {
         display: inline-block;
         text-align: right;
         width: 100%;
+        text-transform: uppercase;
+        //
+        padding-right: 3px;
+        font-size: 16px;
 
         @include media('<=tablet') {
           display: none;
+        }
+
+        @include media('>=1800px') {
+          padding-right: 7px;
+          font-size: 18px;
+        }
+        @include media('>=2400px') {
+          font-size: 20px;
+          padding-left: 9px;
         }
       }
 
@@ -63,9 +128,19 @@
     i {
       color: #fff;
       margin-left: 12px;
+      //
+      font-size: 35px;
 
       @include media('<=tablet') {
         margin-left: 0;
+        font-size: 28px;
+      }
+
+      @include media('>=1800px') {
+        font-size: 42px;
+      }
+      @include media('>=2400px') {
+        font-size: 48px;
       }
     }
 
@@ -90,21 +165,21 @@
     transform: translate(-50%, -50%);
     text-align: center;
     text-transform: uppercase;
-    // width: clamp(300px, 70vw, 1200px);
     cursor: default;
     user-select: none;
     white-space: nowrap;
 
-    // width: 730px;
-    // height: 275px;
-
     h1 {
-      font-size: clamp(3.5rem, 4vw, 8.5rem);
+      font-size: clamp(4rem, 4vw, 12rem);
       letter-spacing: 5px;
 
       @include media('<=tablet') {
         font-size: clamp(3rem, 6vw, 8.5rem);
         line-height: 1.35;
+      }
+
+      @include media('<=phone') {
+        letter-spacing: 4px;
       }
 
       span {
@@ -115,7 +190,7 @@
     }
 
     h3 {
-      font-size: clamp(1.75rem, 2vw, 3rem);
+      font-size: clamp(2rem, 2vw, 5rem);
       color: $clr-light-blue;
       // max-width: 80%;
       letter-spacing: 1px;
@@ -132,14 +207,19 @@
 
     .btn {
       margin-top: clamp(5rem, 5vw, 10rem);
-      font-size: clamp(1.2rem, 1vw, 2.2rem);
-      padding: clamp(12px, 1vw, 20px) clamp(24px, 2vw, 40px);
+      font-size: clamp(1.5rem, 1vw, 2.2rem);
+      padding: clamp(15px, 1vw, 20px) clamp(30px, 2vw, 40px);
       display: inline-block;
       background-color: $clr-light-blue;
       color: $clr-dark-grey;
       border: 1px solid $clr-dark-grey;
       border-radius: 2px;
       transition: $transition;
+
+      i {
+        // margin-left: 10px;
+        transform: translateX(8px);
+      }
 
       &:hover {
         background-color: $clr-dark-grey;

@@ -32,6 +32,37 @@ h6 {
   height: -webkit-fill-available;
   background-color: #22262a;
   position: relative; }
+  .hero .logo-link {
+    width: clamp(200px, 14vw, 350px);
+    position: absolute;
+    top: 20px;
+    left: -10px; }
+    @media (max-width: 420px) {
+      .hero .logo-link {
+        width: 150px; } }
+    .hero .logo-link .logo-image {
+      width: 100%; }
+  .hero .resume {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    border-radius: 2px;
+    color: #94a4b4;
+    border: 1px solid #94a4b4;
+    transition: 0.25s ease-out;
+    font-size: clamp(1.5rem, 1vw, 2.2rem);
+    padding: clamp(8px, 0.667vw, 14px) clamp(24px, 2vw, 42px); }
+    @media (max-width: 420px) {
+      .hero .resume {
+        font-size: 1.3rem; } }
+    .hero .resume i {
+      transform: translateX(clamp(4px, 0.5vw, 10px)); }
+    .hero .resume:hover {
+      background-color: #94a4b4;
+      color: #22262a; }
   .hero .side-menu {
     display: flex;
     flex-direction: column;
@@ -52,34 +83,59 @@ h6 {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 12px;
-      text-transform: uppercase;
-      font-size: 14px;
       font-weight: 600;
       letter-spacing: 1px;
-      transform: translateX(-80px);
-      transition: transform 0.25s cubic-bezier(0.37, 0.6, 0.43, 1.09); }
+      transition: transform 0.25s cubic-bezier(0.37, 0.6, 0.43, 1.09);
+      padding: 15px;
+      transform: translateX(-92px);
+      border-radius: 2px; }
       @media (max-width: 768px) {
         .hero .side-menu a {
           transform: initial;
-          padding: 15px;
+          padding: 12px;
           border-radius: 3px; } }
+      @media (min-width: 1800px) {
+        .hero .side-menu a {
+          padding: 18px;
+          transform: translateX(-105px); } }
+      @media (min-width: 2400px) {
+        .hero .side-menu a {
+          transform: translateX(-122px); } }
       .hero .side-menu a p {
         display: inline-block;
         text-align: right;
-        width: 100%; }
+        width: 100%;
+        text-transform: uppercase;
+        padding-right: 3px;
+        font-size: 16px; }
         @media (max-width: 768px) {
           .hero .side-menu a p {
             display: none; } }
+        @media (min-width: 1800px) {
+          .hero .side-menu a p {
+            padding-right: 7px;
+            font-size: 18px; } }
+        @media (min-width: 2400px) {
+          .hero .side-menu a p {
+            font-size: 20px;
+            padding-left: 9px; } }
       @media (min-width: 768px) {
         .hero .side-menu a:hover {
           transform: translateX(0); } }
     .hero .side-menu i {
       color: #fff;
-      margin-left: 12px; }
+      margin-left: 12px;
+      font-size: 35px; }
       @media (max-width: 768px) {
         .hero .side-menu i {
-          margin-left: 0; } }
+          margin-left: 0;
+          font-size: 28px; } }
+      @media (min-width: 1800px) {
+        .hero .side-menu i {
+          font-size: 42px; } }
+      @media (min-width: 2400px) {
+        .hero .side-menu i {
+          font-size: 48px; } }
     .hero .side-menu .linkedin {
       background-color: #0072b1; }
     .hero .side-menu .github {
@@ -98,17 +154,20 @@ h6 {
     user-select: none;
     white-space: nowrap; }
     .hero .text h1 {
-      font-size: clamp(3.5rem, 4vw, 8.5rem);
+      font-size: clamp(4rem, 4vw, 12rem);
       letter-spacing: 5px; }
       @media (max-width: 768px) {
         .hero .text h1 {
           font-size: clamp(3rem, 6vw, 8.5rem);
           line-height: 1.35; } }
+      @media (max-width: 420px) {
+        .hero .text h1 {
+          letter-spacing: 4px; } }
       @media (max-width: 768px) {
         .hero .text h1 span {
           display: block; } }
     .hero .text h3 {
-      font-size: clamp(1.75rem, 2vw, 3rem);
+      font-size: clamp(2rem, 2vw, 5rem);
       color: #94a4b4;
       letter-spacing: 1px; }
       @media (max-width: 768px) {
@@ -119,14 +178,16 @@ h6 {
         display: block; }
     .hero .text .btn {
       margin-top: clamp(5rem, 5vw, 10rem);
-      font-size: clamp(1.2rem, 1vw, 2.2rem);
-      padding: clamp(12px, 1vw, 20px) clamp(24px, 2vw, 40px);
+      font-size: clamp(1.5rem, 1vw, 2.2rem);
+      padding: clamp(15px, 1vw, 20px) clamp(30px, 2vw, 40px);
       display: inline-block;
       background-color: #94a4b4;
       color: #22262a;
       border: 1px solid #22262a;
       border-radius: 2px;
       transition: 0.25s ease-out; }
+      .hero .text .btn i {
+        transform: translateX(8px); }
       .hero .text .btn:hover {
         background-color: #22262a;
         color: #94a4b4;
