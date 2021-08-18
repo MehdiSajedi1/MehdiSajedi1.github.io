@@ -1,0 +1,167 @@
+.projects-container {
+  background-color: $clr-dark-grey;
+  max-width: clamp(1px, 90vw, 2400px);
+  margin: 0 auto;
+  border-top: 1px solid #999;
+  height: 100vh;
+
+  > h1 {
+    font-size: clamp(4rem, 3.88vw, 7rem);
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 4.8rem;
+    text-decoration: underline;
+    cursor: default;
+  }
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 8rem;
+  gap: 8rem;
+  padding: 4.8rem 0;
+  max-width: clamp(1px, 80vw, 2200px);
+  margin: 0 auto;
+
+  @include media('<tablet') {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .project {
+    position: relative;
+    width: clamp(1px, 35vw, 800px);
+    height: clamp(1px, calc(35vw * 0.875), 700px);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin: 0 auto;
+    border-radius: $border-radius;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+
+    @include media('<tablet') {
+      width: 70vw;
+      height: calc(70vw * 0.875);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: $transition-proj;
+      border-radius: $border-radius;
+    }
+
+    .project-info {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      color: white;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: $transition-proj;
+      width: 70%;
+      text-align: center;
+
+      @include media('<phone') {
+        width: 80%;
+      }
+
+      .text {
+        cursor: default;
+
+        h1 {
+          font-size: clamp(20px, 2vw, 5rem);
+          display: inline-block;
+          border-bottom: 3px solid white;
+          margin-bottom: clamp(8px, 1.04vw, 30px);
+
+          @include media('<tablet') {
+            font-size: clamp(20px, 4vw, 5rem);
+            margin-bottom: clamp(8px, 2.08vw, 30px);
+          }
+        }
+
+        p {
+          font-size: clamp(14px, 1.1vw, 2.2rem);
+
+          @include media('<tablet') {
+            font-size: clamp(14px, 2.2vw, 2.2rem);
+          }
+        }
+      }
+
+      .links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: clamp(8px, 1.04vw, 30px);
+
+        @include media('<tablet') {
+          margin-top: clamp(8px, 2.08vw, 30px);
+        }
+
+        a {
+          transition: $transition;
+          margin: 0 clamp(1rem, 1.04vw, 2rem);
+          height: clamp(4rem, 3.82vw, 8rem);
+          border-radius: $border-radius;
+          border-radius: 5px;
+
+          @include media('<tablet') {
+            margin: 0 clamp(1rem, 2.08vw, 2rem);
+            height: clamp(4rem, 7.64vw, 8rem);
+          }
+
+          &:hover {
+            background: #555;
+          }
+        }
+
+        img {
+          width: clamp(4rem, 3.82vw, 8rem);
+          height: clamp(4rem, 3.82vw, 8rem);
+          padding: clamp(8px, 0.55vw, 12px);
+
+          @include media('<tablet') {
+            width: clamp(4rem, 7.64vw, 8rem);
+            height: clamp(4rem, 7.64vw, 8rem);
+            padding: clamp(8px, 1.1vw, 12px);
+          }
+        }
+      }
+    }
+
+    &:hover {
+      .project-info {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &:hover {
+      &::before {
+        background-color: rgba(0, 0, 0, 0.82);
+      }
+    }
+
+    &.photosnap {
+      background-image: url('./images/photosnap.png');
+    }
+
+    &.rest-countries {
+      background-image: url('./images/rest-countries.png');
+    }
+
+    &.tip-calculator {
+      background-image: url('./images/tip-calculator.png');
+    }
+  }
+}
