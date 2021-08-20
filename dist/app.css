@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  height: 100%;
+  scroll-behavior: smooth; }
+
+body {
+  height: 100%; }
 
 * {
   margin: 0;
@@ -10,9 +15,6 @@ html {
 a {
   text-decoration: none;
   color: #fff; }
-
-html {
-  scroll-behavior: smooth; }
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -28,8 +30,8 @@ h6 {
   font-weight: 600; }
 
 .hero {
-  height: 100vh;
-  height: -webkit-fill-available;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
   background-color: #22262a;
   position: relative; }
   .hero .logo-link {
@@ -60,9 +62,10 @@ h6 {
         font-size: 1.3rem; } }
     .hero .resume i {
       transform: translateX(clamp(4px, 0.5vw, 10px)); }
-    .hero .resume:hover {
-      background-color: #94a4b4;
-      color: #22262a; }
+    @media (hover: hover) {
+      .hero .resume:hover {
+        background-color: #94a4b4;
+        color: #22262a; } }
   .hero .side-menu {
     display: flex;
     flex-direction: column;
@@ -119,7 +122,7 @@ h6 {
           .hero .side-menu a p {
             font-size: 20px;
             padding-left: 9px; } }
-      @media (min-width: 768px) {
+      @media (hover: hover) {
         .hero .side-menu a:hover {
           transform: translateX(0); } }
     .hero .side-menu i {
@@ -152,8 +155,10 @@ h6 {
     text-transform: uppercase;
     cursor: default;
     user-select: none;
+    -webkit-user-select: none;
     white-space: nowrap; }
     .hero .text h1 {
+      min-height: 0vw;
       font-size: clamp(4rem, 4vw, 12rem);
       letter-spacing: 5px; }
       @media (max-width: 768px) {
@@ -167,6 +172,7 @@ h6 {
         .hero .text h1 span {
           display: block; } }
     .hero .text h3 {
+      min-height: 0vw;
       font-size: clamp(2rem, 2vw, 5rem);
       color: #94a4b4;
       letter-spacing: 1px; }
@@ -188,10 +194,11 @@ h6 {
       transition: 0.25s ease-out; }
       .hero .text .btn i {
         transform: translateX(8px); }
-      .hero .text .btn:hover {
-        background-color: #22262a;
-        color: #94a4b4;
-        border: 1px solid #94a4b4; }
+      @media (hover: hover) {
+        .hero .text .btn:hover {
+          background-color: #22262a;
+          color: #94a4b4;
+          border: 1px solid #94a4b4; } }
 
 .skills-container {
   background-color: #5b6570;
@@ -218,6 +225,7 @@ h6 {
   border-top: 1px solid #999;
   height: 100vh; }
   .projects-container > h1 {
+    min-height: 0vw;
     font-size: clamp(4rem, 3.88vw, 7rem);
     color: #fff;
     text-align: center;
@@ -265,20 +273,22 @@ h6 {
       flex-direction: column;
       align-items: center;
       opacity: 0;
-      visibility: hidden;
       color: white;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       transition: all 0.2s ease-in-out;
       width: 70%;
-      text-align: center; }
+      text-align: center;
+      outline: none !important;
+      border: none !important; }
       @media (max-width: 419px) {
         .projects .project .project-info {
           width: 80%; } }
       .projects .project .project-info .text {
         cursor: default; }
         .projects .project .project-info .text h1 {
+          min-height: 0vw;
           font-size: clamp(20px, 2vw, 5rem);
           display: inline-block;
           border-bottom: 3px solid white;
@@ -288,6 +298,7 @@ h6 {
               font-size: clamp(20px, 4vw, 5rem);
               margin-bottom: clamp(8px, 2.08vw, 30px); } }
         .projects .project .project-info .text p {
+          min-height: 0vw;
           font-size: clamp(14px, 1.1vw, 2.2rem); }
           @media (max-width: 767px) {
             .projects .project .project-info .text p {
@@ -323,7 +334,8 @@ h6 {
               padding: clamp(8px, 1.1vw, 12px); } }
     .projects .project:hover .project-info {
       opacity: 1;
-      visibility: visible; }
+      border: none;
+      outline: none; }
     .projects .project:hover::before {
       background-color: rgba(0, 0, 0, 0.82); }
     .projects .project.photosnap {
