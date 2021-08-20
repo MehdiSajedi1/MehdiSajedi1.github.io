@@ -1,5 +1,5 @@
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
   background-color: $clr-dark-grey;
   letter-spacing: 0.5px;
 }
@@ -10,5 +10,24 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 600;
+  line-height: 1.5;
 }
+
+h3 {
+  font-family: 'Mukta', sans-serif;
+}
+
+p {
+  font-family: 'Nunito Sans', sans-serif;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+a {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+// Exo paragraphs, maybe buttons
+// Nunito Sans paragraphs/buttons

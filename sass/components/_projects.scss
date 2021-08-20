@@ -21,13 +21,12 @@
 .projects {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  row-gap: 8rem;
   gap: 8rem;
   padding: 4.8rem 0;
-  max-width: clamp(1px, 80vw, 2200px);
+  max-width: clamp(1px, 90vw, 2200px);
   margin: 0 auto;
 
-  @include media('<tablet') {
+  @include media('<=tablet') {
     grid-template-columns: repeat(1, 1fr);
   }
 
@@ -42,9 +41,14 @@
     border-radius: $border-radius;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
 
-    @include media('<tablet') {
-      width: 70vw;
-      height: calc(70vw * 0.875);
+    @include media('<=tablet') {
+      width: 75vw;
+      height: calc(75vw * 0.875);
+    }
+
+    @include media('<=phone') {
+      width: 82vw;
+      height: calc(82vw * 0.875);
     }
 
     &::before {
@@ -73,7 +77,7 @@
       border: none !important;
 
       @include media('<phone') {
-        width: 80%;
+        width: 82%;
       }
 
       .text {
@@ -81,23 +85,24 @@
 
         h1 {
           min-height: 0vw;
-          font-size: clamp(20px, 2vw, 5rem);
+          font-size: clamp(2.2rem, 2.5vw, 5.5rem);
           display: inline-block;
           border-bottom: 3px solid white;
-          margin-bottom: clamp(8px, 1.04vw, 30px);
+          // margin-bottom: clamp(8px, 1vw, 30px);
 
-          @include media('<tablet') {
-            font-size: clamp(20px, 4vw, 5rem);
-            margin-bottom: clamp(8px, 2.08vw, 30px);
+          @include media('<=tablet') {
+            font-size: clamp(2.2rem, 5vw, 5.5rem);
+            // margin-bottom: clamp(8px, 2vw, 30px);
           }
         }
 
         p {
           min-height: 0vw;
-          font-size: clamp(14px, 1.1vw, 2.2rem);
+          font-size: clamp(1.6rem, 1.3vw, 2.8rem);
+          margin: clamp(1rem, 1vw, 2rem);
 
-          @include media('<tablet') {
-            font-size: clamp(14px, 2.2vw, 2.2rem);
+          @include media('<=tablet') {
+            font-size: clamp(1.6rem, 2.6vw, 2.8rem);
           }
         }
       }
@@ -106,38 +111,38 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: clamp(8px, 1.04vw, 30px);
+        // margin-top: clamp(8px, 1.04vw, 30px);
 
-        @include media('<tablet') {
-          margin-top: clamp(8px, 2.08vw, 30px);
+        @include media('<=tablet') {
+          // margin-top: clamp(8px, 2.08vw, 30px);
         }
 
         a {
-          transition: $transition;
+          transition: $transition-proj-link;
           margin: 0 clamp(1rem, 1.04vw, 2rem);
-          height: clamp(4rem, 3.82vw, 8rem);
+          height: clamp(4.5rem, 3.82vw, 8rem);
           border-radius: $border-radius;
           border-radius: 5px;
 
-          @include media('<tablet') {
+          @include media('<=tablet') {
             margin: 0 clamp(1rem, 2.08vw, 2rem);
-            height: clamp(4rem, 7.64vw, 8rem);
+            height: clamp(4.5rem, 7.64vw, 8rem);
+          }
+
+          img {
+            width: clamp(4.5rem, 3.82vw, 8rem);
+            height: clamp(4.5rem, 3.82vw, 8rem);
+            padding: clamp(8px, 0.55vw, 12px);
+
+            @include media('<=tablet') {
+              width: clamp(4.5rem, 7.64vw, 8rem);
+              height: clamp(4.5rem, 7.64vw, 8rem);
+              padding: clamp(8px, 1.1vw, 12px);
+            }
           }
 
           &:hover {
             background: #555;
-          }
-        }
-
-        img {
-          width: clamp(4rem, 3.82vw, 8rem);
-          height: clamp(4rem, 3.82vw, 8rem);
-          padding: clamp(8px, 0.55vw, 12px);
-
-          @include media('<tablet') {
-            width: clamp(4rem, 7.64vw, 8rem);
-            height: clamp(4rem, 7.64vw, 8rem);
-            padding: clamp(8px, 1.1vw, 12px);
           }
         }
       }

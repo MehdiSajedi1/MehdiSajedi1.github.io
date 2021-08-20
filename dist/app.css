@@ -1,4 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600;700&family=Mukta:wght@400;500;600;700&family=Nunito+Sans:wght@400;600;700&family=Ubuntu:wght@400;500;700&family=Work+Sans:wght@400;500;600;700&display=swap");
+.btn {
+  font-size: clamp(1.5rem, 1vw, 2.2rem);
+  padding: clamp(16px, 1vw, 20px) clamp(25px, 2vw, 40px);
+  display: inline-block;
+  border-radius: 2px;
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out; }
+
 html {
   font-size: 62.5%;
   height: 100%;
@@ -17,7 +26,7 @@ a {
   color: #fff; }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
   background-color: #22262a;
   letter-spacing: 0.5px; }
 
@@ -27,7 +36,20 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 600; }
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 600;
+  line-height: 1.5; }
+
+h3 {
+  font-family: 'Mukta', sans-serif; }
+
+p {
+  font-family: 'Nunito Sans', sans-serif;
+  line-height: 1.5;
+  font-weight: 500; }
+
+a {
+  font-family: 'Ubuntu', sans-serif; }
 
 .hero {
   min-height: 100vh;
@@ -48,15 +70,9 @@ h6 {
     position: absolute;
     right: 30px;
     top: 30px;
-    font-size: 16px;
-    text-transform: uppercase;
-    padding: 10px 30px;
-    border-radius: 2px;
     color: #94a4b4;
     border: 1px solid #94a4b4;
-    transition: 0.25s ease-out;
-    font-size: clamp(1.5rem, 1vw, 2.2rem);
-    padding: clamp(8px, 0.667vw, 14px) clamp(24px, 2vw, 42px); }
+    padding: clamp(12px, 0.8vw, 16px) clamp(24px, 2vw, 42px); }
     @media (max-width: 420px) {
       .hero .resume {
         font-size: 1.3rem; } }
@@ -86,11 +102,11 @@ h6 {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-weight: 600;
       letter-spacing: 1px;
-      transition: transform 0.25s cubic-bezier(0.37, 0.6, 0.43, 1.09);
+      transition: transform 0.35s cubic-bezier(0.37, 0.6, 0.43, 1.09);
+      transition: transform 0.35s cubic-bezier(0.3, 0.585, 0.25, 1.1);
       padding: 15px;
-      transform: translateX(-92px);
+      transform: translateX(-97px);
       border-radius: 2px; }
       @media (max-width: 768px) {
         .hero .side-menu a {
@@ -100,15 +116,17 @@ h6 {
       @media (min-width: 1800px) {
         .hero .side-menu a {
           padding: 18px;
-          transform: translateX(-105px); } }
+          transform: translateX(-110px); } }
       @media (min-width: 2400px) {
         .hero .side-menu a {
-          transform: translateX(-122px); } }
+          transform: translateX(-130px); } }
       .hero .side-menu a p {
+        font-family: 'Ubuntu', sans-serif;
         display: inline-block;
         text-align: right;
         width: 100%;
         text-transform: uppercase;
+        font-weight: 700;
         padding-right: 3px;
         font-size: 16px; }
         @media (max-width: 768px) {
@@ -173,29 +191,22 @@ h6 {
           display: block; } }
     .hero .text h3 {
       min-height: 0vw;
-      font-size: clamp(2rem, 2vw, 5rem);
+      font-size: clamp(2.2rem, 2vw, 5rem);
       color: #94a4b4;
-      letter-spacing: 1px; }
+      letter-spacing: 2px; }
       @media (max-width: 768px) {
         .hero .text h3 {
           font-size: clamp(1.5rem, 3vw, 3rem);
           margin-top: 10px; } }
       .hero .text h3 span {
         display: block; }
-    .hero .text .btn {
+    .hero .text .view-projects {
       margin-top: clamp(5rem, 5vw, 10rem);
-      font-size: clamp(1.5rem, 1vw, 2.2rem);
-      padding: clamp(15px, 1vw, 20px) clamp(30px, 2vw, 40px);
-      display: inline-block;
       background-color: #94a4b4;
       color: #22262a;
-      border: 1px solid #22262a;
-      border-radius: 2px;
-      transition: 0.25s ease-out; }
-      .hero .text .btn i {
-        transform: translateX(8px); }
+      border: 1px solid #22262a; }
       @media (hover: hover) {
-        .hero .text .btn:hover {
+        .hero .text .view-projects:hover {
           background-color: #22262a;
           color: #94a4b4;
           border: 1px solid #94a4b4; } }
@@ -213,7 +224,7 @@ h6 {
     height: 136px;
     display: block;
     margin: 0 auto;
-    transition: transform 0.25s ease-out;
+    transition: transform 0.3s ease-in-out;
     padding: 5px; }
     .skills img:hover {
       transform: scale(1.1); }
@@ -238,12 +249,11 @@ h6 {
 .projects {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  row-gap: 8rem;
   gap: 8rem;
   padding: 4.8rem 0;
-  max-width: clamp(1px, 80vw, 2200px);
+  max-width: clamp(1px, 90vw, 2200px);
   margin: 0 auto; }
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     .projects {
       grid-template-columns: repeat(1, 1fr); } }
   .projects .project {
@@ -256,16 +266,20 @@ h6 {
     margin: 0 auto;
     border-radius: 0px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.9); }
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
       .projects .project {
-        width: 70vw;
-        height: calc(70vw * 0.875); } }
+        width: 75vw;
+        height: calc(75vw * 0.875); } }
+    @media (max-width: 420px) {
+      .projects .project {
+        width: 82vw;
+        height: calc(82vw * 0.875); } }
     .projects .project::before {
       content: '';
       position: absolute;
       width: 100%;
       height: 100%;
-      transition: all 0.2s ease-in-out;
+      transition: all 0.25s ease-in-out;
       border-radius: 0px; }
     .projects .project .project-info {
       position: absolute;
@@ -277,61 +291,56 @@ h6 {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      transition: all 0.2s ease-in-out;
+      transition: all 0.25s ease-in-out;
       width: 70%;
       text-align: center;
       outline: none !important;
       border: none !important; }
       @media (max-width: 419px) {
         .projects .project .project-info {
-          width: 80%; } }
+          width: 82%; } }
       .projects .project .project-info .text {
         cursor: default; }
         .projects .project .project-info .text h1 {
           min-height: 0vw;
-          font-size: clamp(20px, 2vw, 5rem);
+          font-size: clamp(2.2rem, 2.5vw, 5.5rem);
           display: inline-block;
-          border-bottom: 3px solid white;
-          margin-bottom: clamp(8px, 1.04vw, 30px); }
-          @media (max-width: 767px) {
+          border-bottom: 3px solid white; }
+          @media (max-width: 768px) {
             .projects .project .project-info .text h1 {
-              font-size: clamp(20px, 4vw, 5rem);
-              margin-bottom: clamp(8px, 2.08vw, 30px); } }
+              font-size: clamp(2.2rem, 5vw, 5.5rem); } }
         .projects .project .project-info .text p {
           min-height: 0vw;
-          font-size: clamp(14px, 1.1vw, 2.2rem); }
-          @media (max-width: 767px) {
+          font-size: clamp(1.6rem, 1.3vw, 2.8rem);
+          margin: clamp(1rem, 1vw, 2rem); }
+          @media (max-width: 768px) {
             .projects .project .project-info .text p {
-              font-size: clamp(14px, 2.2vw, 2.2rem); } }
+              font-size: clamp(1.6rem, 2.6vw, 2.8rem); } }
       .projects .project .project-info .links {
         display: flex;
         align-items: center;
-        justify-content: center;
-        margin-top: clamp(8px, 1.04vw, 30px); }
-        @media (max-width: 767px) {
-          .projects .project .project-info .links {
-            margin-top: clamp(8px, 2.08vw, 30px); } }
+        justify-content: center; }
         .projects .project .project-info .links a {
-          transition: 0.25s ease-out;
+          transition: all 0.25s ease-out;
           margin: 0 clamp(1rem, 1.04vw, 2rem);
-          height: clamp(4rem, 3.82vw, 8rem);
+          height: clamp(4.5rem, 3.82vw, 8rem);
           border-radius: 0px;
           border-radius: 5px; }
-          @media (max-width: 767px) {
+          @media (max-width: 768px) {
             .projects .project .project-info .links a {
               margin: 0 clamp(1rem, 2.08vw, 2rem);
-              height: clamp(4rem, 7.64vw, 8rem); } }
+              height: clamp(4.5rem, 7.64vw, 8rem); } }
+          .projects .project .project-info .links a img {
+            width: clamp(4.5rem, 3.82vw, 8rem);
+            height: clamp(4.5rem, 3.82vw, 8rem);
+            padding: clamp(8px, 0.55vw, 12px); }
+            @media (max-width: 768px) {
+              .projects .project .project-info .links a img {
+                width: clamp(4.5rem, 7.64vw, 8rem);
+                height: clamp(4.5rem, 7.64vw, 8rem);
+                padding: clamp(8px, 1.1vw, 12px); } }
           .projects .project .project-info .links a:hover {
             background: #555; }
-        .projects .project .project-info .links img {
-          width: clamp(4rem, 3.82vw, 8rem);
-          height: clamp(4rem, 3.82vw, 8rem);
-          padding: clamp(8px, 0.55vw, 12px); }
-          @media (max-width: 767px) {
-            .projects .project .project-info .links img {
-              width: clamp(4rem, 7.64vw, 8rem);
-              height: clamp(4rem, 7.64vw, 8rem);
-              padding: clamp(8px, 1.1vw, 12px); } }
     .projects .project:hover .project-info {
       opacity: 1;
       border: none;

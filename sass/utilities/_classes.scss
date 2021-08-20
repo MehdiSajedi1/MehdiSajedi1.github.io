@@ -1,0 +1,8 @@
+.btn {
+  font-size: clamp(1.5rem, 1vw, 2.2rem);
+  padding: clamp(16px, 1vw, 20px) clamp(25px, 2vw, 40px);
+  display: inline-block;
+  border-radius: 2px;
+  text-transform: uppercase;
+  transition: $transition;
+}

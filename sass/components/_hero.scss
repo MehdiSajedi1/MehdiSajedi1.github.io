@@ -4,6 +4,9 @@
   background-color: $clr-dark-grey;
   position: relative;
 
+  //- ***********************************************************
+  // LOGO
+  //- ***********************************************************
   .logo-link {
     width: clamp(200px, 14vw, 350px);
     position: absolute;
@@ -19,20 +22,17 @@
     }
   }
 
+  //- ***********************************************************
+  // RESUME
+  //- ***********************************************************
   .resume {
     position: absolute;
     right: 30px;
     top: 30px;
-    font-size: 16px;
-    text-transform: uppercase;
-    padding: 10px 30px;
-    border-radius: 2px;
     color: $clr-light-blue;
     border: 1px solid $clr-light-blue;
-    transition: $transition;
 
-    font-size: clamp(1.5rem, 1vw, 2.2rem);
-    padding: clamp(8px, 0.667vw, 14px) clamp(24px, 2vw, 42px);
+    padding: clamp(12px, 0.8vw, 16px) clamp(24px, 2vw, 42px);
 
     @include media('<=phone') {
       font-size: 1.3rem;
@@ -50,6 +50,9 @@
     }
   }
 
+  //- ***********************************************************
+  // SIDE MENU
+  //- ***********************************************************
   .side-menu {
     display: flex;
     flex-direction: column;
@@ -75,12 +78,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-weight: 600;
       letter-spacing: 1px;
-      transition: transform 0.25s cubic-bezier(0.37, 0.6, 0.43, 1.09);
-      //
+      transition: transform 0.35s cubic-bezier(0.37, 0.6, 0.43, 1.09);
+      // transition: transform 0.35s cubic-bezier(0.97, 1.1, 0.43, 1);
+      // transition: transform 0.35s cubic-bezier(0.475, 0.585, 0.2, 1.25);
+      transition: transform 0.35s cubic-bezier(0.3, 0.585, 0.25, 1.1);
+
       padding: 15px;
-      transform: translateX(-92px);
+      transform: translateX(-97px);
       border-radius: 2px;
 
       @include media('<=tablet') {
@@ -91,18 +96,20 @@
 
       @include media('>=1800px') {
         padding: 18px;
-        transform: translateX(-105px);
+        transform: translateX(-110px);
       }
       @include media('>=2400px') {
-        transform: translateX(-122px);
+        transform: translateX(-130px);
       }
 
       p {
+        font-family: 'Ubuntu', sans-serif;
         display: inline-block;
         text-align: right;
         width: 100%;
         text-transform: uppercase;
-        //
+        font-weight: 700;
+
         padding-right: 3px;
         font-size: 16px;
 
@@ -165,6 +172,9 @@
     }
   }
 
+  //- ***********************************************************
+  // HERO TEXT
+  //- ***********************************************************
   .text {
     color: white;
     position: absolute;
@@ -201,10 +211,9 @@
 
     h3 {
       min-height: 0vw;
-      font-size: clamp(2rem, 2vw, 5rem);
+      font-size: clamp(2.2rem, 2vw, 5rem);
       color: $clr-light-blue;
-      // max-width: 80%;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
 
       @include media('<=tablet') {
         font-size: clamp(1.5rem, 3vw, 3rem);
@@ -216,21 +225,11 @@
       }
     }
 
-    .btn {
+    .view-projects {
       margin-top: clamp(5rem, 5vw, 10rem);
-      font-size: clamp(1.5rem, 1vw, 2.2rem);
-      padding: clamp(15px, 1vw, 20px) clamp(30px, 2vw, 40px);
-      display: inline-block;
       background-color: $clr-light-blue;
       color: $clr-dark-grey;
       border: 1px solid $clr-dark-grey;
-      border-radius: 2px;
-      transition: $transition;
-
-      i {
-        // margin-left: 10px;
-        transform: translateX(8px);
-      }
 
       @media (hover: hover) {
         &:hover {
