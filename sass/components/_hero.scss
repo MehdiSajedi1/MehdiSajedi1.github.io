@@ -206,6 +206,10 @@
       &.active .hover-text {
         width: 100%;
       }
+
+      &.active .normal-text {
+        opacity: 0;
+      }
     }
 
     h1 {
@@ -213,7 +217,7 @@
       font-size: clamp(4rem, 4vw, 12rem);
       letter-spacing: 5px;
 
-      .goofed {
+      .name {
         position: relative;
         display: inline-block;
 
@@ -224,8 +228,14 @@
           left: 0;
           top: 0;
           color: #c59774;
+          color: #e7995d;
           transition: width 0.35s ease-in-out;
-          white-space: nowrap;
+          // Set to all for delayed scaling when re-sizing browser
+        }
+
+        .normal-text {
+          transition: opacity 0.35s ease-in-out 0.35s;
+          // Set to all for delayed scaling when re-sizing browser
         }
       }
 

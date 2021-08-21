@@ -1,12 +1,14 @@
 html {
   font-size: 62.5%;
   height: 100%;
+  overflow: hidden;
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 body {
   height: 100%;
+  overflow: auto;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -18,4 +20,24 @@ body {
 a {
   text-decoration: none;
   color: #fff;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $clr-something;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #546e8a;
 }
