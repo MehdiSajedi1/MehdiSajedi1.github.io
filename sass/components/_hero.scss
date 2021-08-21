@@ -1,7 +1,7 @@
 .hero {
   min-height: 100vh;
   min-height: -webkit-fill-available;
-  background-color: $clr-dark-grey;
+  background-color: var(--clr-dark-grey);
   position: relative;
 
   //- ***********************************************************
@@ -31,7 +31,6 @@
     top: 30px;
     color: $clr-light-blue;
     border: 1px solid $clr-light-blue;
-
     padding: clamp(12px, 0.8vw, 16px) clamp(24px, 2vw, 42px);
 
     @include media('<=phone') {
@@ -45,7 +44,7 @@
     @media (hover: hover) {
       &:hover {
         background-color: $clr-light-blue;
-        color: $clr-dark-grey;
+        color: var(--clr-dark-grey);
       }
     }
   }
@@ -87,6 +86,18 @@
       padding: 15px;
       transform: translateX(-97px);
       border-radius: 2px;
+
+      &:first-of-type {
+        animation-delay: 0s;
+      }
+
+      &:nth-of-type(2) {
+        animation-delay: 0.2s;
+      }
+
+      &:last-of-type {
+        animation-delay: 0.4s;
+      }
 
       @include media('<=tablet') {
         transform: initial;
@@ -168,7 +179,8 @@
     }
 
     .mail {
-      background-color: #6fc2b0;
+      // background-color: #6fc2b0;
+      background-color: #549386;
     }
   }
 
@@ -180,18 +192,42 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
     text-transform: uppercase;
     cursor: default;
     user-select: none;
     -webkit-user-select: none;
     white-space: nowrap;
+    transform: translate(-50%, -50%);
+
+    .text-intro {
+      animation: moveUp $animation-time;
+
+      &.active .hover-text {
+        width: 100%;
+      }
+    }
 
     h1 {
       min-height: 0vw;
       font-size: clamp(4rem, 4vw, 12rem);
       letter-spacing: 5px;
+
+      .goofed {
+        position: relative;
+        display: inline-block;
+
+        .hover-text {
+          overflow: hidden;
+          width: 0;
+          position: absolute;
+          left: 0;
+          top: 0;
+          color: #c59774;
+          transition: width 0.35s ease-in-out;
+          white-space: nowrap;
+        }
+      }
 
       @include media('<=tablet') {
         font-size: clamp(3rem, 6vw, 8.5rem);
@@ -228,16 +264,23 @@
     .view-projects {
       margin-top: clamp(5rem, 5vw, 10rem);
       background-color: $clr-light-blue;
-      color: $clr-dark-grey;
-      border: 1px solid $clr-dark-grey;
+      color: var(--clr-dark-grey);
+      border: 1px solid var(--clr-dark-grey);
 
       @media (hover: hover) {
         &:hover {
-          background-color: $clr-dark-grey;
+          background-color: var(--clr-dark-grey);
           color: $clr-light-blue;
           border: 1px solid $clr-light-blue;
         }
       }
     }
+  }
+}
+
+@keyframes moveUp {
+  from {
+    transform: scale(0.01);
+    opacity: 0;
   }
 }

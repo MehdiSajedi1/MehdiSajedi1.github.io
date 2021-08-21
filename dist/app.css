@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600;700&family=Mukta:wght@400;500;600;700&family=Nunito+Sans:wght@400;600;700&family=Ubuntu:wght@400;500;700&family=Work+Sans:wght@400;500;600;700&display=swap");
+:root {
+  --clr-dark-grey: #1f2731; }
+
 .btn {
   font-size: clamp(1.5rem, 1vw, 2.2rem);
   padding: clamp(16px, 1vw, 20px) clamp(25px, 2vw, 40px);
@@ -11,7 +14,8 @@
 html {
   font-size: 62.5%;
   height: 100%;
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+  overflow-x: hidden; }
 
 body {
   height: 100%; }
@@ -27,7 +31,7 @@ a {
 
 body {
   font-family: 'Nunito Sans', sans-serif;
-  background-color: #22262a;
+  background-color: var(--clr-dark-grey);
   letter-spacing: 0.5px; }
 
 h1,
@@ -54,7 +58,7 @@ a {
 .hero {
   min-height: 100vh;
   min-height: -webkit-fill-available;
-  background-color: #22262a;
+  background-color: var(--clr-dark-grey);
   position: relative; }
   .hero .logo-link {
     width: clamp(200px, 14vw, 350px);
@@ -70,8 +74,8 @@ a {
     position: absolute;
     right: 30px;
     top: 30px;
-    color: #94a4b4;
-    border: 1px solid #94a4b4;
+    color: #a1bac6;
+    border: 1px solid #a1bac6;
     padding: clamp(12px, 0.8vw, 16px) clamp(24px, 2vw, 42px); }
     @media (max-width: 420px) {
       .hero .resume {
@@ -80,8 +84,8 @@ a {
       transform: translateX(clamp(4px, 0.5vw, 10px)); }
     @media (hover: hover) {
       .hero .resume:hover {
-        background-color: #94a4b4;
-        color: #22262a; } }
+        background-color: #a1bac6;
+        color: var(--clr-dark-grey); } }
   .hero .side-menu {
     display: flex;
     flex-direction: column;
@@ -108,6 +112,12 @@ a {
       padding: 15px;
       transform: translateX(-97px);
       border-radius: 2px; }
+      .hero .side-menu a:first-of-type {
+        animation-delay: 0s; }
+      .hero .side-menu a:nth-of-type(2) {
+        animation-delay: 0.2s; }
+      .hero .side-menu a:last-of-type {
+        animation-delay: 0.4s; }
       @media (max-width: 768px) {
         .hero .side-menu a {
           transform: initial;
@@ -162,23 +172,39 @@ a {
     .hero .side-menu .github {
       background-color: #333; }
     .hero .side-menu .mail {
-      background-color: #6fc2b0; }
+      background-color: #549386; }
   .hero .text {
     color: white;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
     text-transform: uppercase;
     cursor: default;
     user-select: none;
     -webkit-user-select: none;
-    white-space: nowrap; }
+    white-space: nowrap;
+    transform: translate(-50%, -50%); }
+    .hero .text .text-intro {
+      animation: moveUp 1s; }
+      .hero .text .text-intro.active .hover-text {
+        width: 100%; }
     .hero .text h1 {
       min-height: 0vw;
       font-size: clamp(4rem, 4vw, 12rem);
       letter-spacing: 5px; }
+      .hero .text h1 .goofed {
+        position: relative;
+        display: inline-block; }
+        .hero .text h1 .goofed .hover-text {
+          overflow: hidden;
+          width: 0;
+          position: absolute;
+          left: 0;
+          top: 0;
+          color: #c59774;
+          transition: width 0.35s ease-in-out;
+          white-space: nowrap; }
       @media (max-width: 768px) {
         .hero .text h1 {
           font-size: clamp(3rem, 6vw, 8.5rem);
@@ -192,7 +218,7 @@ a {
     .hero .text h3 {
       min-height: 0vw;
       font-size: clamp(2.2rem, 2vw, 5rem);
-      color: #94a4b4;
+      color: #a1bac6;
       letter-spacing: 2px; }
       @media (max-width: 768px) {
         .hero .text h3 {
@@ -202,35 +228,22 @@ a {
         display: block; }
     .hero .text .view-projects {
       margin-top: clamp(5rem, 5vw, 10rem);
-      background-color: #94a4b4;
-      color: #22262a;
-      border: 1px solid #22262a; }
+      background-color: #a1bac6;
+      color: var(--clr-dark-grey);
+      border: 1px solid var(--clr-dark-grey); }
       @media (hover: hover) {
         .hero .text .view-projects:hover {
-          background-color: #22262a;
-          color: #94a4b4;
-          border: 1px solid #94a4b4; } }
+          background-color: var(--clr-dark-grey);
+          color: #a1bac6;
+          border: 1px solid #a1bac6; } }
 
-.skills-container {
-  background-color: #5b6570;
-  margin-top: 8rem; }
-
-.skills {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 3.2rem;
-  gap: 4.8rem; }
-  .skills img {
-    height: 136px;
-    display: block;
-    margin: 0 auto;
-    transition: transform 0.3s ease-in-out;
-    padding: 5px; }
-    .skills img:hover {
-      transform: scale(1.1); }
+@keyframes moveUp {
+  from {
+    transform: scale(0.01);
+    opacity: 0; } }
 
 .projects-container {
-  background-color: #22262a;
+  background-color: var(--clr-dark-grey);
   max-width: clamp(1px, 90vw, 2400px);
   margin: 0 auto;
   border-top: 1px solid #999;
@@ -264,7 +277,7 @@ a {
     background-position: center center;
     background-size: cover;
     margin: 0 auto;
-    border-radius: 0px;
+    border-radius: 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.9); }
     @media (max-width: 768px) {
       .projects .project {
@@ -279,8 +292,8 @@ a {
       position: absolute;
       width: 100%;
       height: 100%;
-      transition: all 0.25s ease-in-out;
-      border-radius: 0px; }
+      transition: all 0.22s ease-in-out;
+      border-radius: 0; }
     .projects .project .project-info {
       position: absolute;
       display: flex;
@@ -291,7 +304,7 @@ a {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      transition: all 0.25s ease-in-out;
+      transition: all 0.22s ease-in-out;
       width: 70%;
       text-align: center;
       outline: none !important;
@@ -324,7 +337,7 @@ a {
           transition: all 0.25s ease-out;
           margin: 0 clamp(1rem, 1.04vw, 2rem);
           height: clamp(4.5rem, 3.82vw, 8rem);
-          border-radius: 0px;
+          border-radius: 0;
           border-radius: 5px; }
           @media (max-width: 768px) {
             .projects .project .project-info .links a {
@@ -333,12 +346,12 @@ a {
           .projects .project .project-info .links a img {
             width: clamp(4.5rem, 3.82vw, 8rem);
             height: clamp(4.5rem, 3.82vw, 8rem);
-            padding: clamp(8px, 0.55vw, 12px); }
+            padding: clamp(6px, 0.55vw, 12px); }
             @media (max-width: 768px) {
               .projects .project .project-info .links a img {
                 width: clamp(4.5rem, 7.64vw, 8rem);
                 height: clamp(4.5rem, 7.64vw, 8rem);
-                padding: clamp(8px, 1.1vw, 12px); } }
+                padding: clamp(6px, 1.1vw, 12px); } }
           .projects .project .project-info .links a:hover {
             background: #555; }
     .projects .project:hover .project-info {

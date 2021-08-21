@@ -1,12 +1,24 @@
-$clr-body: #eee;
-$clr-light-grey: #e6e6e6;
-$clr-dark-grey: #22262a;
+// $clr-dark-grey: #22262a;
 $clr-light-blue: #94a4b4;
+
+// $clr-dark-grey: #1e252c;
+
+// $clr-dark-grey: #1f2933;
+
+// $clr-dark-grey: #25303b;
+
+// $clr-dark-grey: #1f2731;
+
+$clr-light-blue: #a1bac6;
 $clr-something: #5b6570;
 
-$max-width: 1440px;
 $transition: 0.3s ease-in-out;
-$transition-proj: all 0.25s ease-in-out;
+$transition-proj: all 0.22s ease-in-out;
 $transition-proj-link: all 0.25s ease-out;
 
-$border-radius: 0px;
+$animation-time: 1s;
+$border-radius: 0;
+
+:root {
+  --clr-dark-grey: #1f2731;
+}

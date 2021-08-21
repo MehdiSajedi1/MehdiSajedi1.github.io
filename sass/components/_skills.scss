@@ -1,23 +1,23 @@
-.skills-container {
-  background-color: $clr-something;
-  margin-top: 8rem;
-}
+// .skills-container {
+//   background-color: $clr-something;
+//   margin-top: 8rem;
+// }
 
-.skills {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 3.2rem;
-  gap: 4.8rem;
+// .skills {
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr);
+//   padding: 3.2rem;
+//   gap: 4.8rem;
 
-  img {
-    height: 136px;
-    display: block;
-    margin: 0 auto;
-    transition: transform $transition;
-    padding: 5px;
+//   img {
+//     height: 136px;
+//     display: block;
+//     margin: 0 auto;
+//     transition: transform $transition;
+//     padding: 5px;
 
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
-}
+//     &:hover {
+//       transform: scale(1.1);
+//     }
+//   }
+// }

@@ -1,7 +1,9 @@
-const viewProjectsBtn = document.querySelector('#view-projects');
-const heroText = document.querySelector('#hero-text');
-const projects = document.querySelector('#projects');
+const heroText = document.querySelector('.text-intro');
 
-viewProjectsBtn.addEventListener('click', (e) => {
- 
+heroText.addEventListener('mouseenter', (e) => {
+  heroText.classList.toggle('active');
+});
+
+heroText.addEventListener('click', (e) => {
+  heroText.classList.toggle('active');
 });
