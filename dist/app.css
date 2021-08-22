@@ -13,13 +13,11 @@
 html {
   font-size: 62.5%;
   height: 100%;
-  overflow: hidden;
-  scroll-behavior: smooth; }
+  overflow: hidden; }
 
 body {
   height: 100%;
-  overflow: auto;
-  scroll-behavior: smooth; }
+  overflow: auto; }
 
 * {
   margin: 0;
