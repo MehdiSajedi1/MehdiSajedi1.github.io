@@ -1,24 +1,42 @@
+'use strict';
+
+const nameText = document.querySelector('.name');
 const heroText = document.querySelector('.text-intro');
 
-heroText.addEventListener('mouseenter', () => {
+nameText.addEventListener('mouseenter', () => {
   heroText.classList.toggle('active');
 });
 
-heroText.addEventListener('click', () => {
+nameText.addEventListener('click', () => {
   heroText.classList.toggle('active');
 });
 
-$('#view-projects').on('click', function (e) {
-  if (this.hash !== '') {
-    e.preventDefault();
+function scrollToSmoothly(pos, time) {
+  let currentPos = window.pageYOffset;
+  let start = null;
+  if (time == null) time = 500;
+  (pos = +pos), (time = +time);
+  window.requestAnimationFrame(function step(currentTime) {
+    start = !start ? currentTime : start;
+    let progress = currentTime - start;
+    if (currentPos < pos) {
+      window.scrollTo(0, ((pos - currentPos) * progress) / time + currentPos);
+    } else {
+      window.scrollTo(0, currentPos - ((currentPos - pos) * progress) / time);
+    }
+    if (progress < time) {
+      window.requestAnimationFrame(step);
+    } else {
+      window.scrollTo(0, pos);
+    }
+  });
+}
 
-    const hash = this.hash;
+const viewProjectsBtn = document.querySelector('#view-projects');
 
-    $('html, body').animate(
-      {
-        scrollTop: $(hash).offset().top,
-      },
-      750
-    );
-  }
+viewProjectsBtn.addEventListener('click', (e) => {
+  const line = document.querySelector('.line');
+  const distance = line.getBoundingClientRect().top + window.scrollY;
+
+  scrollToSmoothly(distance, 700);
 });

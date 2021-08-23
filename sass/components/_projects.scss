@@ -1,8 +1,15 @@
+.line {
+  height: 1px;
+  max-width: clamp(1px, 90vw, 2400px);
+  background-color: $clr-something;
+  margin: 0 auto;
+}
+
 .projects-container {
   background-color: var(--clr-dark-grey);
   max-width: clamp(1px, 90vw, 2400px);
   margin: 0 auto;
-  border-top: 1px solid #999;
+  // border-top: 1px solid #999;
   height: 100vh;
 
   > h1 {

@@ -1,14 +1,16 @@
+:root {
+  scrollbar-color: $clr-something $clr-dark-grey-shade;
+}
+
 html {
   font-size: 62.5%;
   height: 100%;
-  overflow: hidden;
-  // scroll-behavior: smooth;
+  // overflow: hidden;
 }
 
 body {
   height: 100%;
-  overflow: auto;
-  // scroll-behavior: smooth;
+  // overflow: auto;
 }
 
 * {
@@ -24,20 +26,24 @@ a {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 14px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: $clr-dark-grey-shade;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: $clr-something;
-}
+  border: 3px solid $clr-dark-grey-shade;
+  background-clip: padding-box;
+  border-radius: 8px;
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #546e8a;
+  &:hover {
+    background: #546e8a;
+    border-radius: 8px;
+    background-clip: padding-box;
+  }
 }
