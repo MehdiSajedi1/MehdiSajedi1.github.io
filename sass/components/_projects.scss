@@ -1,7 +1,7 @@
 .line {
   height: 1px;
   max-width: clamp(1px, 90vw, 2400px);
-  background-color: $clr-something;
+  background-color: $clr-light-blue;
   margin: 0 auto;
 }
 
@@ -9,19 +9,22 @@
   background-color: var(--clr-dark-grey);
   max-width: clamp(1px, 90vw, 2400px);
   margin: 0 auto;
-  // border-top: 1px solid #999;
-  height: 100vh;
+  min-height: 100vh;
 
-  > h1 {
-    min-height: 0vw;
-    font-size: clamp(4rem, 3.88vw, 7rem);
-    color: #fff;
+  .center {
     text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-top: 4.8rem;
-    text-decoration: underline;
-    cursor: default;
+    h1 {
+      min-height: 0vw;
+      font-size: clamp(4rem, 3.88vw, 8rem);
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin: clamp(4rem, 3.5vw, 10rem) 0;
+      display: inline-block;
+      border-bottom: 5px solid white;
+      cursor: default;
+      line-height: 1.25;
+    }
   }
 }
 
@@ -29,7 +32,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 8rem;
-  padding: 4.8rem 0;
+  padding: 2rem 0 4.8rem;
   max-width: clamp(1px, 90vw, 2200px);
   margin: 0 auto;
 
@@ -47,6 +50,22 @@
     margin: 0 auto;
     border-radius: $border-radius;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    // opacity: 0;
+    // transform: translateY(35px);
+    transition: all 0.5s ease-in-out;
+
+    opacity: 1;
+    transform: translateY(0);
+
+    // &.swing {
+    //   opacity: 1;
+    //   transform: translateY(0);
+    // }
+
+    &.invisible {
+      opacity: 0;
+      transform: translateY(35px);
+    }
 
     @include media('<=tablet') {
       width: 75vw;
@@ -82,6 +101,7 @@
       text-align: center;
       outline: none !important;
       border: none !important;
+      z-index: 500;
 
       @include media('<phone') {
         width: 82%;
@@ -95,6 +115,7 @@
           font-size: clamp(2.2rem, 2.5vw, 5.5rem);
           display: inline-block;
           border-bottom: 3px solid white;
+
           // margin-bottom: clamp(8px, 1vw, 30px);
 
           @include media('<=tablet') {
@@ -110,6 +131,10 @@
 
           @include media('<=tablet') {
             font-size: clamp(1.6rem, 2.6vw, 2.8rem);
+          }
+
+          span {
+            color: #788b93;
           }
         }
       }
@@ -129,7 +154,7 @@
           margin: 0 clamp(1rem, 1.04vw, 2rem);
           height: clamp(4.5rem, 3.82vw, 8rem);
           border-radius: $border-radius;
-          border-radius: 5px;
+          border-radius: 8px;
 
           @include media('<=tablet') {
             margin: 0 clamp(1rem, 2.08vw, 2rem);
@@ -149,7 +174,7 @@
           }
 
           &:hover {
-            background: #555;
+            background: rgba(70, 70, 70, 0.9);
           }
         }
       }
@@ -161,9 +186,7 @@
         border: none;
         outline: none;
       }
-    }
 
-    &:hover {
       &::before {
         background-color: rgba(0, 0, 0, 0.82);
       }

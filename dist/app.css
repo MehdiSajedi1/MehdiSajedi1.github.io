@@ -18,7 +18,8 @@ html {
   height: 100%; }
 
 body {
-  height: 100%; }
+  height: 100%;
+  overflow-x: hidden; }
 
 * {
   margin: 0;
@@ -83,7 +84,8 @@ a {
     width: clamp(202px, 14vw, 350px);
     position: absolute;
     top: 20px;
-    left: -10px; }
+    left: -10px;
+    user-select: none; }
     @media (max-width: 420px) {
       .hero .logo-link {
         width: 150px; } }
@@ -207,10 +209,6 @@ a {
     transform: translate(-50%, -50%); }
     .hero .text .text-intro {
       animation: moveUp 1s; }
-      .hero .text .text-intro.active .hover-text {
-        width: 100%; }
-      .hero .text .text-intro.active .normal-text {
-        opacity: 0; }
     .hero .text h1 {
       min-height: 0vw;
       font-size: clamp(4rem, 4vw, 12rem);
@@ -224,11 +222,14 @@ a {
           position: absolute;
           left: 0;
           top: 0;
-          color: #c59774;
           color: #e7995d;
           transition: width 0.5s ease-in-out; }
         .hero .text h1 .name .normal-text {
           transition: opacity 0.5s ease-in-out 0.5s; }
+        .hero .text h1 .name.active .hover-text {
+          width: 100%; }
+        .hero .text h1 .name.active .normal-text {
+          opacity: 0; }
       @media (max-width: 768px) {
         .hero .text h1 {
           font-size: clamp(3rem, 6vw, 8.5rem);
@@ -269,30 +270,33 @@ a {
 .line {
   height: 1px;
   max-width: clamp(1px, 90vw, 2400px);
-  background-color: #5b6570;
+  background-color: #a1bac6;
   margin: 0 auto; }
 
 .projects-container {
   background-color: var(--clr-dark-grey);
   max-width: clamp(1px, 90vw, 2400px);
   margin: 0 auto;
-  height: 100vh; }
-  .projects-container > h1 {
-    min-height: 0vw;
-    font-size: clamp(4rem, 3.88vw, 7rem);
-    color: #fff;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-top: 4.8rem;
-    text-decoration: underline;
-    cursor: default; }
+  min-height: 100vh; }
+  .projects-container .center {
+    text-align: center; }
+    .projects-container .center h1 {
+      min-height: 0vw;
+      font-size: clamp(4rem, 3.88vw, 8rem);
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin: clamp(4rem, 3.5vw, 10rem) 0;
+      display: inline-block;
+      border-bottom: 5px solid white;
+      cursor: default;
+      line-height: 1.25; }
 
 .projects {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 8rem;
-  padding: 4.8rem 0;
+  padding: 2rem 0 4.8rem;
   max-width: clamp(1px, 90vw, 2200px);
   margin: 0 auto; }
   @media (max-width: 768px) {
@@ -307,7 +311,13 @@ a {
     background-size: cover;
     margin: 0 auto;
     border-radius: 0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9); }
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    transition: all 0.5s ease-in-out;
+    opacity: 1;
+    transform: translateY(0); }
+    .projects .project.invisible {
+      opacity: 0;
+      transform: translateY(35px); }
     @media (max-width: 768px) {
       .projects .project {
         width: 75vw;
@@ -337,7 +347,8 @@ a {
       width: 70%;
       text-align: center;
       outline: none !important;
-      border: none !important; }
+      border: none !important;
+      z-index: 500; }
       @media (max-width: 419px) {
         .projects .project .project-info {
           width: 82%; } }
@@ -358,6 +369,8 @@ a {
           @media (max-width: 768px) {
             .projects .project .project-info .text p {
               font-size: clamp(1.6rem, 2.6vw, 2.8rem); } }
+          .projects .project .project-info .text p span {
+            color: #788b93; }
       .projects .project .project-info .links {
         display: flex;
         align-items: center;
@@ -367,7 +380,7 @@ a {
           margin: 0 clamp(1rem, 1.04vw, 2rem);
           height: clamp(4.5rem, 3.82vw, 8rem);
           border-radius: 0;
-          border-radius: 5px; }
+          border-radius: 8px; }
           @media (max-width: 768px) {
             .projects .project .project-info .links a {
               margin: 0 clamp(1rem, 2.08vw, 2rem);
@@ -382,7 +395,7 @@ a {
                 height: clamp(4.5rem, 7.64vw, 8rem);
                 padding: clamp(6px, 1.1vw, 12px); } }
           .projects .project .project-info .links a:hover {
-            background: #555; }
+            background: rgba(70, 70, 70, 0.9); }
     .projects .project:hover .project-info {
       opacity: 1;
       border: none;
@@ -395,3 +408,18 @@ a {
       background-image: url("./images/rest-countries.png"); }
     .projects .project.tip-calculator {
       background-image: url("./images/tip-calculator.png"); }
+
+.footer {
+  height: clamp(70px, 5vw, 85px);
+  width: 100vw;
+  background-color: #1a212a;
+  box-shadow: 0 0 2px #a1bac6;
+  margin-top: clamp(5rem, 3vw, 10rem);
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .footer p {
+    font-size: clamp(14px, 0.9vw, 20px);
+    color: white;
+    text-align: center;
+    word-spacing: 1px; }

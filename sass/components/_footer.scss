@@ -1,0 +1,18 @@
+.footer {
+  height: clamp(70px, 5vw, 85px);
+  width: 100vw;
+  background-color: #1a212a;
+  box-shadow: 0 0 2px $clr-light-blue;
+  margin-top: clamp(5rem, 3vw, 10rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    font-size: clamp(14px, 0.9vw, 20px);
+    // color: $clr-light-blue;
+    color: white;
+    text-align: center;
+    word-spacing: 1px;
+  }
+}
