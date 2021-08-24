@@ -10,6 +10,13 @@
 :root {
   scrollbar-color: #5b6570 #2e3645; }
 
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
 html {
   font-size: 62.5%;
   height: 100%; }
@@ -17,13 +24,6 @@ html {
 body {
   height: 100%;
   overflow: hidden auto; }
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; }
 
 a {
   text-decoration: none;
@@ -101,8 +101,6 @@ a {
     @media (max-width: 420px) {
       .hero .resume {
         font-size: 1.3rem; } }
-    .hero .resume i {
-      transform: translateX(clamp(4px, 0.5vw, 10px)); }
     @media (hover: hover) {
       .hero .resume:hover {
         background-color: #a1bac6;
@@ -133,16 +131,11 @@ a {
       padding: 15px;
       transform: translateX(-97px);
       border-radius: 2px; }
-      .hero .side-menu a:first-of-type {
-        animation-delay: 0s; }
-      .hero .side-menu a:nth-of-type(2) {
-        animation-delay: 0.2s; }
-      .hero .side-menu a:last-of-type {
-        animation-delay: 0.4s; }
       @media (max-width: 768px) {
         .hero .side-menu a {
           transform: initial;
           padding: 12px;
+          width: 55px;
           border-radius: 3px; } }
       @media (min-width: 1800px) {
         .hero .side-menu a {
@@ -159,6 +152,7 @@ a {
         text-transform: uppercase;
         font-weight: 700;
         padding-right: 3px;
+        transform: translateX(-5px);
         font-size: 16px; }
         @media (max-width: 768px) {
           .hero .side-menu a p {
@@ -174,20 +168,18 @@ a {
       @media (hover: hover) {
         .hero .side-menu a:hover {
           transform: translateX(0); } }
-    .hero .side-menu i {
-      color: #f9f9f9;
-      margin-left: 12px;
-      font-size: 35px; }
+    .hero .side-menu img {
+      width: 32px;
+      margin-left: 10px; }
       @media (max-width: 768px) {
-        .hero .side-menu i {
-          margin-left: 0;
-          font-size: 28px; } }
+        .hero .side-menu img {
+          margin: 0 auto; } }
       @media (min-width: 1800px) {
-        .hero .side-menu i {
-          font-size: 42px; } }
+        .hero .side-menu img {
+          width: 36px; } }
       @media (min-width: 2400px) {
-        .hero .side-menu i {
-          font-size: 48px; } }
+        .hero .side-menu img {
+          width: 42px; } }
     .hero .side-menu .linkedin {
       background-color: #0072b1; }
     .hero .side-menu .github {

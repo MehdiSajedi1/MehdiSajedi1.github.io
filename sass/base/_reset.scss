@@ -2,6 +2,14 @@
   scrollbar-color: $clr-grey-blue $clr-dark-blue-shade;
 }
 
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   font-size: 62.5%;
   height: 100%;
@@ -13,14 +21,6 @@ body {
   // overflow-x: hidden;
   overflow: hidden auto;
   // overflow: auto;
-}
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 a {

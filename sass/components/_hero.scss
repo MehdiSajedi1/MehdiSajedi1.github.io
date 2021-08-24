@@ -39,10 +39,6 @@
       font-size: 1.3rem;
     }
 
-    i {
-      transform: translateX(clamp(4px, 0.5vw, 10px));
-    }
-
     @media (hover: hover) {
       &:hover {
         background-color: $clr-light-blue;
@@ -89,21 +85,10 @@
       transform: translateX(-97px);
       border-radius: 2px;
 
-      &:first-of-type {
-        animation-delay: 0s;
-      }
-
-      &:nth-of-type(2) {
-        animation-delay: 0.2s;
-      }
-
-      &:last-of-type {
-        animation-delay: 0.4s;
-      }
-
       @include media('<=tablet') {
         transform: initial;
         padding: 12px;
+        width: 55px;
         border-radius: 3px;
       }
 
@@ -122,8 +107,8 @@
         width: 100%;
         text-transform: uppercase;
         font-weight: 700;
-
         padding-right: 3px;
+        transform: translateX(-5px);
         font-size: 16px;
 
         @include media('<=tablet') {
@@ -145,30 +130,22 @@
           transform: translateX(0);
         }
       }
-
-      // @include media('>=tablet') {
-      //   &:hover {
-      //     transform: translateX(0);
-      //   }
-      // }
     }
 
-    i {
-      color: $clr-white;
-      margin-left: 12px;
-      //
-      font-size: 35px;
+    img {
+      width: 32px;
+      margin-left: 10px;
 
       @include media('<=tablet') {
-        margin-left: 0;
-        font-size: 28px;
+        margin: 0 auto;
       }
 
       @include media('>=1800px') {
-        font-size: 42px;
+        width: 36px;
       }
+
       @include media('>=2400px') {
-        font-size: 48px;
+        width: 42px;
       }
     }
 
