@@ -1,5 +1,5 @@
 :root {
-  scrollbar-color: $clr-something $clr-dark-grey-shade;
+  scrollbar-color: $clr-grey-blue $clr-dark-blue-shade;
 }
 
 html {
@@ -10,11 +10,14 @@ html {
 
 body {
   height: 100%;
-  overflow-x: hidden;
+  // overflow-x: hidden;
+  overflow: hidden auto;
   // overflow: auto;
 }
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -22,7 +25,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #fff;
+  color: $clr-white;
 }
 
 /* width */
@@ -32,13 +35,13 @@ a {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: $clr-dark-grey-shade;
+  background: $clr-dark-blue-shade;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: $clr-something;
-  border: 3px solid $clr-dark-grey-shade;
+  background: $clr-grey-blue;
+  border: 3px solid $clr-dark-blue-shade;
   background-clip: padding-box;
   border-radius: 8px;
 

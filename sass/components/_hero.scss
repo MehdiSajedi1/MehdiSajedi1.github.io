@@ -1,7 +1,7 @@
 .hero {
   min-height: 100vh;
   min-height: -webkit-fill-available;
-  background-color: var(--clr-dark-grey);
+  background-color: $clr-dark-blue;
   position: relative;
 
   //- ***********************************************************
@@ -46,7 +46,7 @@
     @media (hover: hover) {
       &:hover {
         background-color: $clr-light-blue;
-        color: var(--clr-dark-grey);
+        color: $clr-dark-blue;
       }
     }
   }
@@ -154,7 +154,7 @@
     }
 
     i {
-      color: #fff;
+      color: $clr-white;
       margin-left: 12px;
       //
       font-size: 35px;
@@ -190,7 +190,7 @@
   // HERO TEXT
   //- ***********************************************************
   .text {
-    color: white;
+    color: $clr-white;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -204,6 +204,7 @@
 
     .text-intro {
       animation: moveUp $animation-time;
+      animation-fill-mode: backwards;
     }
 
     h1 {
@@ -277,12 +278,12 @@
     .view-projects {
       margin-top: clamp(5rem, 5vw, 10rem);
       background-color: $clr-light-blue;
-      color: var(--clr-dark-grey);
-      border: 1px solid var(--clr-dark-grey);
+      color: $clr-dark-blue;
+      border: 1px solid $clr-dark-blue;
 
       @media (hover: hover) {
         &:hover {
-          background-color: var(--clr-dark-grey);
+          background-color: $clr-dark-blue;
           color: $clr-light-blue;
           border: 1px solid $clr-light-blue;
         }

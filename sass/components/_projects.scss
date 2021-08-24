@@ -6,7 +6,7 @@
 }
 
 .projects-container {
-  background-color: var(--clr-dark-grey);
+  background-color: $clr-dark-blue;
   max-width: clamp(1px, 90vw, 2400px);
   margin: 0 auto;
   min-height: 100vh;
@@ -16,12 +16,12 @@
     h1 {
       min-height: 0vw;
       font-size: clamp(4rem, 3.88vw, 8rem);
-      color: #fff;
+      color: $clr-white;
       text-transform: uppercase;
       letter-spacing: 3px;
       margin: clamp(4rem, 3.5vw, 10rem) 0;
       display: inline-block;
-      border-bottom: 5px solid white;
+      border-bottom: 5px solid $clr-white;
       cursor: default;
       line-height: 1.25;
     }
@@ -92,16 +92,15 @@
       flex-direction: column;
       align-items: center;
       opacity: 0;
-      color: white;
+      color: $clr-white;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -35%);
       transition: $transition-proj;
       width: 70%;
       text-align: center;
       outline: none !important;
       border: none !important;
-      z-index: 500;
 
       @include media('<phone') {
         width: 82%;
@@ -114,13 +113,10 @@
           min-height: 0vw;
           font-size: clamp(2.2rem, 2.5vw, 5.5rem);
           display: inline-block;
-          border-bottom: 3px solid white;
-
-          // margin-bottom: clamp(8px, 1vw, 30px);
+          border-bottom: 3px solid $clr-white;
 
           @include media('<=tablet') {
             font-size: clamp(2.2rem, 5vw, 5.5rem);
-            // margin-bottom: clamp(8px, 2vw, 30px);
           }
         }
 
@@ -135,6 +131,9 @@
 
           span {
             color: #788b93;
+            color: #99b7c4;
+            color: #abcfdf;
+            color: #9dc1d1;
           }
         }
       }
@@ -143,11 +142,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        // margin-top: clamp(8px, 1.04vw, 30px);
-
-        @include media('<=tablet') {
-          // margin-top: clamp(8px, 2.08vw, 30px);
-        }
 
         a {
           transition: $transition-proj-link;
@@ -181,14 +175,16 @@
     }
 
     &:hover {
+      // box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+      &::before {
+        background-color: rgba(0, 0, 0, 0.83);
+      }
+
       .project-info {
+        transform: translate(-50%, -50%);
         opacity: 1;
         border: none;
         outline: none;
-      }
-
-      &::before {
-        background-color: rgba(0, 0, 0, 0.82);
       }
     }
 
