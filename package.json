@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/MehdiSajedi1/Portfolio#readme",
   "dependencies": {
-    "node-sass": "^6.0.1",
-    "smoothscroll-polyfill": "^0.4.4"
+    "node-sass": "^6.0.1"
   }
 }
