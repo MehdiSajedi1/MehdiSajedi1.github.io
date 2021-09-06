@@ -95,7 +95,7 @@
       color: $clr-white;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -35%);
+      transform: translate(-50%, -33%);
       transition: $transition-proj;
       width: 70%;
       text-align: center;
@@ -158,12 +158,12 @@
           img {
             width: clamp(4.5rem, 3.82vw, 8rem);
             height: clamp(4.5rem, 3.82vw, 8rem);
-            padding: clamp(6px, 0.55vw, 12px);
+            padding: clamp(7px, 0.65vw, 14px);
 
             @include media('<=tablet') {
               width: clamp(4.5rem, 7.64vw, 8rem);
               height: clamp(4.5rem, 7.64vw, 8rem);
-              padding: clamp(6px, 1.1vw, 12px);
+              padding: clamp(7px, 1.3vw, 12px);
             }
           }
 
@@ -198,6 +198,10 @@
 
     &.tip-calculator {
       background-image: url('./images/tip-calculator.png');
+    }
+
+    &.dice-game {
+      background-image: url('./images/dice-game.png');
     }
   }
 }
