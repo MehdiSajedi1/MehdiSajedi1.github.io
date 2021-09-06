@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "node-sass sass/main.scss dist/app.css -w"
+    "sass": "node-sass sass/main.scss docs/app.css -w"
   },
   "repository": {
     "type": "git",
