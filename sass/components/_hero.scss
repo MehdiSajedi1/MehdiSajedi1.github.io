@@ -33,7 +33,7 @@
     top: 30px;
     color: $clr-light-blue;
     border: 1px solid $clr-light-blue;
-    padding: clamp(12px, 0.8vw, 16px) clamp(24px, 2vw, 42px);
+    padding: clamp(12px, 0.7vw, 16px) clamp(30px, 1.75vw, 40px);
 
     @include media('<=phone') {
       font-size: 1.3rem;
