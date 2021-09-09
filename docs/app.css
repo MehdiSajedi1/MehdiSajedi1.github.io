@@ -80,14 +80,14 @@ a {
   background-color: #1f2731;
   position: relative; }
   .hero .logo-link {
-    width: clamp(202px, 14vw, 350px);
+    width: clamp(150px, 10vw, 230px);
     position: absolute;
     top: 20px;
-    left: -10px;
+    left: 10px;
     user-select: none; }
     @media (max-width: 420px) {
       .hero .logo-link {
-        width: 150px; } }
+        width: 100px; } }
     .hero .logo-link .logo-image {
       width: 100%;
       height: 100%; }
@@ -97,7 +97,11 @@ a {
     top: 30px;
     color: #a1bac6;
     border: 1px solid #a1bac6;
-    padding: clamp(12px, 0.7vw, 16px) clamp(30px, 1.75vw, 40px); }
+    padding: clamp(10px, 0.7vw, 16px) clamp(25px, 1.75vw, 40px); }
+    @media (max-width: 600px) {
+      .hero .resume {
+        right: 20px;
+        top: 20px; } }
     @media (max-width: 420px) {
       .hero .resume {
         font-size: 1.3rem; } }
@@ -126,7 +130,6 @@ a {
       justify-content: space-between;
       align-items: center;
       letter-spacing: 1px;
-      transition: transform 0.35s cubic-bezier(0.37, 0.6, 0.43, 1.09);
       transition: transform 0.35s cubic-bezier(0.3, 0.585, 0.25, 1.1);
       padding: 15px;
       transform: translateX(-97px);
@@ -144,6 +147,19 @@ a {
       @media (min-width: 2400px) {
         .hero .side-menu a {
           transform: translateX(-130px); } }
+      .hero .side-menu a img {
+        width: 32px;
+        margin-left: 10px; }
+        @media (max-width: 768px) {
+          .hero .side-menu a img {
+            width: 100%;
+            margin: 0 auto; } }
+        @media (min-width: 1800px) {
+          .hero .side-menu a img {
+            width: 36px; } }
+        @media (min-width: 2400px) {
+          .hero .side-menu a img {
+            width: 42px; } }
       .hero .side-menu a p {
         font-family: 'Ubuntu', sans-serif;
         display: inline-block;
@@ -168,18 +184,6 @@ a {
       @media (hover: hover) {
         .hero .side-menu a:hover {
           transform: translateX(0); } }
-    .hero .side-menu img {
-      width: 32px;
-      margin-left: 10px; }
-      @media (max-width: 768px) {
-        .hero .side-menu img {
-          margin: 0 auto; } }
-      @media (min-width: 1800px) {
-        .hero .side-menu img {
-          width: 36px; } }
-      @media (min-width: 2400px) {
-        .hero .side-menu img {
-          width: 42px; } }
     .hero .side-menu .linkedin {
       background-color: #0072b1; }
     .hero .side-menu .github {
@@ -247,7 +251,8 @@ a {
       margin-top: clamp(5rem, 5vw, 10rem);
       background-color: #a1bac6;
       color: #1f2731;
-      border: 1px solid #1f2731; }
+      border: 1px solid #1f2731;
+      border-radius: 3px; }
       @media (hover: hover) {
         .hero .text .view-projects:hover {
           background-color: #1f2731;

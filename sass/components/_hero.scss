@@ -8,14 +8,14 @@
   // LOGO
   //- ***********************************************************
   .logo-link {
-    width: clamp(202px, 14vw, 350px);
+    width: clamp(150px, 10vw, 230px);
     position: absolute;
     top: 20px;
-    left: -10px;
+    left: 10px;
     user-select: none;
 
     @include media('<=phone') {
-      width: 150px;
+      width: 100px;
     }
 
     .logo-image {
@@ -33,7 +33,12 @@
     top: 30px;
     color: $clr-light-blue;
     border: 1px solid $clr-light-blue;
-    padding: clamp(12px, 0.7vw, 16px) clamp(30px, 1.75vw, 40px);
+    padding: clamp(10px, 0.7vw, 16px) clamp(25px, 1.75vw, 40px);
+
+    @include media('<=600px') {
+      right: 20px;
+      top: 20px;
+    }
 
     @include media('<=phone') {
       font-size: 1.3rem;
@@ -76,7 +81,7 @@
       justify-content: space-between;
       align-items: center;
       letter-spacing: 1px;
-      transition: transform 0.35s cubic-bezier(0.37, 0.6, 0.43, 1.09);
+      // transition: transform 0.35s cubic-bezier(0.37, 0.6, 0.43, 1.09);
       // transition: transform 0.35s cubic-bezier(0.97, 1.1, 0.43, 1);
       // transition: transform 0.35s cubic-bezier(0.475, 0.585, 0.2, 1.25);
       transition: transform 0.35s cubic-bezier(0.3, 0.585, 0.25, 1.1);
@@ -98,6 +103,24 @@
       }
       @include media('>=2400px') {
         transform: translateX(-130px);
+      }
+
+      img {
+        width: 32px;
+        margin-left: 10px;
+
+        @include media('<=tablet') {
+          width: 100%;
+          margin: 0 auto;
+        }
+
+        @include media('>=1800px') {
+          width: 36px;
+        }
+
+        @include media('>=2400px') {
+          width: 42px;
+        }
       }
 
       p {
@@ -129,23 +152,6 @@
         &:hover {
           transform: translateX(0);
         }
-      }
-    }
-
-    img {
-      width: 32px;
-      margin-left: 10px;
-
-      @include media('<=tablet') {
-        margin: 0 auto;
-      }
-
-      @include media('>=1800px') {
-        width: 36px;
-      }
-
-      @include media('>=2400px') {
-        width: 42px;
       }
     }
 
@@ -201,12 +207,10 @@
           top: 0;
           color: #e7995d;
           transition: width 0.5s ease-in-out;
-          // Set to all for delayed scaling when re-sizing browser
         }
 
         .normal-text {
           transition: opacity 0.5s ease-in-out 0.5s;
-          // Set to all for delayed scaling when re-sizing browser
         }
 
         &.active {
@@ -257,6 +261,7 @@
       background-color: $clr-light-blue;
       color: $clr-dark-blue;
       border: 1px solid $clr-dark-blue;
+      border-radius: 3px;
 
       @media (hover: hover) {
         &:hover {
