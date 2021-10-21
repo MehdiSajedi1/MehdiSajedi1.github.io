@@ -1,5 +1,8 @@
 'use strict';
 
+//- ********************************************************
+// PAGE LOAD ANIMATION
+//- ********************************************************
 const heroText = document.querySelector('.text-intro');
 
 document.addEventListener('DOMContentLoaded', () => {
