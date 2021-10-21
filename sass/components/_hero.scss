@@ -81,10 +81,8 @@
       justify-content: space-between;
       align-items: center;
       letter-spacing: 1px;
-      // transition: transform 0.35s cubic-bezier(0.37, 0.6, 0.43, 1.09);
-      // transition: transform 0.35s cubic-bezier(0.97, 1.1, 0.43, 1);
-      // transition: transform 0.35s cubic-bezier(0.475, 0.585, 0.2, 1.25);
-      transition: transform 0.35s cubic-bezier(0.3, 0.585, 0.25, 1.1);
+      transition: transform 0.35s cubic-bezier(0.37, 0.6, 0.43, 1.09);
+      // transition: transform 0.35s cubic-bezier(0.3, 0.585, 0.25, 1.1);
 
       padding: 15px;
       transform: translateX(-97px);
@@ -198,6 +196,7 @@
       .name {
         position: relative;
         display: inline-block;
+        --bezier: cubic-bezier(0.4, 0.11, 0.06, 1.06);
 
         .hover-text {
           overflow: hidden;
@@ -206,11 +205,11 @@
           left: 0;
           top: 0;
           color: #e7995d;
-          transition: width 0.5s ease-in-out;
+          transition: width 0.65s var(--bezier);
         }
 
         .normal-text {
-          transition: opacity 0.5s ease-in-out 0.5s;
+          transition: opacity 0.65s var(--bezier) 0.65s;
         }
 
         &.active {
