@@ -395,17 +395,19 @@ a {
                 padding: clamp(7px, 1.3vw, 12px); } }
           .projects .project .project-info .links a:hover {
             background: rgba(70, 70, 70, 0.9); }
-    .projects .project:hover::before {
-      background-color: rgba(0, 0, 0, 0.83); }
-    .projects .project:hover .project-info {
-      transform: translate(-50%, -50%);
-      opacity: 1;
-      border: none;
-      outline: none; }
-    .projects .project.photosnap {
-      background-image: url("./images/photosnap.png"); }
+    .projects .project:hover {
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.9); }
+      .projects .project:hover::before {
+        background-color: rgba(0, 0, 0, 0.83); }
+      .projects .project:hover .project-info {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+        border: none;
+        outline: none; }
     .projects .project.rest-countries {
       background-image: url("./images/rest-countries.png"); }
+    .projects .project.photosnap {
+      background-image: url("./images/photosnap.png"); }
     .projects .project.tip-calculator {
       background-image: url("./images/tip-calculator.png"); }
     .projects .project.dice-game {

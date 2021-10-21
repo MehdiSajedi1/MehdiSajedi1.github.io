@@ -175,7 +175,7 @@
     }
 
     &:hover {
-      // box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
       &::before {
         background-color: rgba(0, 0, 0, 0.83);
       }
@@ -188,12 +188,12 @@
       }
     }
 
-    &.photosnap {
-      background-image: url('./images/photosnap.png');
-    }
-
     &.rest-countries {
       background-image: url('./images/rest-countries.png');
+    }
+
+    &.photosnap {
+      background-image: url('./images/photosnap.png');
     }
 
     &.tip-calculator {
