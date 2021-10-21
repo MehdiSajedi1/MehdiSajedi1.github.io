@@ -202,9 +202,8 @@ a {
     -webkit-user-select: none;
     white-space: nowrap;
     transform: translate(-50%, -50%); }
-    .hero .text .text-intro {
-      animation: moveUp 1s;
-      animation-fill-mode: backwards; }
+    .hero .text .attach-animation {
+      animation: growIn 1s; }
     .hero .text h1 {
       min-height: 0vw;
       font-size: clamp(4rem, 4vw, 12rem);
@@ -212,7 +211,7 @@ a {
       .hero .text h1 .name {
         position: relative;
         display: inline-block;
-        --bezier: cubic-bezier(0.4, 0.11, 0.06, 1.06); }
+        --bezier: cubic-bezier(0.4, 0.11, 0.06, 0.9); }
         .hero .text h1 .name .hover-text {
           overflow: hidden;
           width: 0;
@@ -260,7 +259,7 @@ a {
           color: #a1bac6;
           border: 1px solid #a1bac6; } }
 
-@keyframes moveUp {
+@keyframes growIn {
   from {
     transform: scale(0.01);
     opacity: 0; } }

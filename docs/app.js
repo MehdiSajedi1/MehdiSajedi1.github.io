@@ -1,10 +1,15 @@
 'use strict';
 
+const heroText = document.querySelector('.text-intro');
+
+document.addEventListener('DOMContentLoaded', () => {
+  heroText.classList.add('attach-animation');
+});
+
 //- ********************************************************
 // HERO NAME TRANSITION
 //- ********************************************************
 const nameText = document.querySelector('.name');
-const heroText = document.querySelector('.text-intro');
 
 nameText.addEventListener('mouseenter', () => {
   nameText.classList.toggle('active');

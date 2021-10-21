@@ -183,9 +183,8 @@
     white-space: nowrap;
     transform: translate(-50%, -50%);
 
-    .text-intro {
-      animation: moveUp $animation-time;
-      animation-fill-mode: backwards;
+    .attach-animation {
+      animation: growIn $animation-time;
     }
 
     h1 {
@@ -196,7 +195,7 @@
       .name {
         position: relative;
         display: inline-block;
-        --bezier: cubic-bezier(0.4, 0.11, 0.06, 1.06);
+        --bezier: cubic-bezier(0.4, 0.11, 0.06, 0.9);
 
         .hover-text {
           overflow: hidden;
@@ -273,7 +272,7 @@
   }
 }
 
-@keyframes moveUp {
+@keyframes growIn {
   from {
     transform: scale(0.01);
     opacity: 0;
