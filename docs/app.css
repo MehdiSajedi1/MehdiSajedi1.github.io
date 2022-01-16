@@ -386,6 +386,8 @@ a {
         opacity: 1;
         border: none;
         outline: none; }
+    .projects .project.movies-and-shows {
+      background-image: url("./images/movies-and-shows.png"); }
     .projects .project.rest-countries {
       background-image: url("./images/rest-countries.png"); }
     .projects .project.photosnap {
