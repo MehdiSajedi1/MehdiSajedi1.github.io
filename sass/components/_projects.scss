@@ -49,24 +49,10 @@
     background-size: cover;
     margin: 0 auto;
     border-radius: $border-radius;
-    // border-radius: 0 20px 0 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-    // opacity: 0;
-    // transform: translateY(35px);
     transition: all 0.5s ease-in-out;
-
     opacity: 1;
     transform: translateY(0);
-
-    // &.swing {
-    //   opacity: 1;
-    //   transform: translateY(0);
-    // }
-
-    &.invisible {
-      opacity: 0;
-      transform: translateY(35px);
-    }
 
     @include media('<=tablet') {
       width: 75vw;
@@ -78,6 +64,11 @@
       height: calc(82vw * 0.875);
     }
 
+    &.invisible {
+      opacity: 0;
+      transform: translateY(35px);
+    }
+
     &::before {
       content: '';
       position: absolute;
@@ -85,6 +76,21 @@
       height: 100%;
       transition: $transition-proj;
       border-radius: $border-radius;
+    }
+
+    &:hover {
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+
+      &::before {
+        background-color: rgba(0, 0, 0, 0.83);
+      }
+
+      .project-info {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+        border: none;
+        outline: none;
+      }
     }
 
     .project-info {
@@ -172,20 +178,6 @@
             background: rgba(70, 70, 70, 0.9);
           }
         }
-      }
-    }
-
-    &:hover {
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
-      &::before {
-        background-color: rgba(0, 0, 0, 0.83);
-      }
-
-      .project-info {
-        transform: translate(-50%, -50%);
-        opacity: 1;
-        border: none;
-        outline: none;
       }
     }
 

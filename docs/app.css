@@ -294,9 +294,6 @@ a {
     transition: all 0.5s ease-in-out;
     opacity: 1;
     transform: translateY(0); }
-    .projects .project.invisible {
-      opacity: 0;
-      transform: translateY(35px); }
     @media (max-width: 768px) {
       .projects .project {
         width: 75vw;
@@ -305,6 +302,9 @@ a {
       .projects .project {
         width: 82vw;
         height: calc(82vw * 0.875); } }
+    .projects .project.invisible {
+      opacity: 0;
+      transform: translateY(35px); }
     .projects .project::before {
       content: '';
       position: absolute;
@@ -312,6 +312,15 @@ a {
       height: 100%;
       transition: all 0.25s ease-in-out;
       border-radius: 0; }
+    .projects .project:hover {
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.9); }
+      .projects .project:hover::before {
+        background-color: rgba(0, 0, 0, 0.83); }
+      .projects .project:hover .project-info {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+        border: none;
+        outline: none; }
     .projects .project .project-info {
       position: absolute;
       display: flex;
@@ -377,15 +386,6 @@ a {
                 padding: clamp(7px, 1.3vw, 12px); } }
           .projects .project .project-info .links a:hover {
             background: rgba(70, 70, 70, 0.9); }
-    .projects .project:hover {
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.9); }
-      .projects .project:hover::before {
-        background-color: rgba(0, 0, 0, 0.83); }
-      .projects .project:hover .project-info {
-        transform: translate(-50%, -50%);
-        opacity: 1;
-        border: none;
-        outline: none; }
     .projects .project.movies-and-shows {
       background-image: url("./images/movies-and-shows.png"); }
     .projects .project.rest-countries {
