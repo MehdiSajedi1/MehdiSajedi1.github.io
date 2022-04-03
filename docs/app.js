@@ -1,16 +1,21 @@
 'use strict';
 
 //- ********************************************************
-// PAGE LOAD ANIMATION
+// HEADER PAGE LOAD ANIMATION
 //- ********************************************************
-const heroText = document.querySelector('.text-intro');
+const heroText = document.getElementById('hero-text');
 
-document.addEventListener('DOMContentLoaded', () => {
-  heroText.classList.add('attach-animation');
-});
+document.fonts.ready
+  .then(() => {
+    heroText.classList.remove('hidden');
+    heroText.classList.add('attach-animation');
+  })
+  .catch(() => {
+    console.error('Could not fetch fonts');
+  });
 
 //- ********************************************************
-// HERO NAME TRANSITION
+// NAME COLOR FILL IN TRANSITION
 //- ********************************************************
 const nameText = document.querySelector('.name');
 

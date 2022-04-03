@@ -13,6 +13,7 @@
     top: 25px;
     left: 15px;
     user-select: none;
+    z-index: 1;
 
     @include media('<=phone') {
       width: 100px;
@@ -33,6 +34,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 1;
 
     @include media('<=tablet') {
       flex-direction: row;
@@ -145,17 +147,30 @@
   .text {
     color: $clr-white;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    // top: 50%;
+    // left: 50%;
     text-align: center;
     text-transform: uppercase;
     cursor: default;
     user-select: none;
     -webkit-user-select: none;
     white-space: nowrap;
-    transform: translate(-50%, -50%);
+    // transform: translate(-50%, -50%);
 
-    .attach-animation {
+    //
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    &.hidden {
+      opacity: 0;
+    }
+
+    &.attach-animation {
       animation: growIn $animation-time;
     }
 

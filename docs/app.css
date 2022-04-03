@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600;700&family=Mukta:wght@400;500;600;700&family=Nunito+Sans:wght@400;600;700&family=Ubuntu:wght@400;500;700&family=Work+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@600&family=Nunito+Sans:wght@400;500&family=Ubuntu:wght@400;600;700&display=swap");
 .btn {
   font-size: clamp(1.5rem, 1vw, 2.2rem);
   padding: clamp(16px, 1vw, 20px) clamp(25px, 2vw, 40px);
@@ -84,7 +84,8 @@ a {
     position: absolute;
     top: 25px;
     left: 15px;
-    user-select: none; }
+    user-select: none;
+    z-index: 1; }
     @media (max-width: 420px) {
       .hero .logo-link {
         width: 100px; } }
@@ -96,7 +97,8 @@ a {
     flex-direction: column;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%); }
+    transform: translateY(-50%);
+    z-index: 1; }
     @media (max-width: 768px) {
       .hero .side-menu {
         flex-direction: row;
@@ -175,16 +177,21 @@ a {
   .hero .text {
     color: #f9f9f9;
     position: absolute;
-    top: 50%;
-    left: 50%;
     text-align: center;
     text-transform: uppercase;
     cursor: default;
     user-select: none;
     -webkit-user-select: none;
     white-space: nowrap;
-    transform: translate(-50%, -50%); }
-    .hero .text .attach-animation {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; }
+    .hero .text.hidden {
+      opacity: 0; }
+    .hero .text.attach-animation {
       animation: growIn 1s; }
     .hero .text h1 {
       min-height: 0vw;
